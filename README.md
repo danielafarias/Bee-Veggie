@@ -70,7 +70,7 @@ Em seguida, adicione as bibliotecas e dependências necessárias:
 <yarn add @material-ui/icons>
 ```
 ```
-<yarn add axios>
+<yarn add @material-ui/icons>
 ```
 
 ## 🍯 Usando Zombie Survival
