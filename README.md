@@ -7,7 +7,8 @@
 ![GitHub Last Commit](https://img.shields.io/github/last-commit/danielafarias/Bee-Veggie?style=for-the-badge)
 ![Github Watchers](https://img.shields.io/github/watchers/danielafarias/Bee-Veggie?style=for-the-badge)
 
-![Bee-Veggie](url)
+![Bee-Veggie](https://user-images.githubusercontent.com/79869120/131783554-77f84c2f-38ce-4e56-8719-3873ab52e85b.png)
+
 
 
 > Bee Veggie é uma plataforma criada para ajudar na experiência do cliente em um restaurante em meio à pandemia. Desenvolvido com Next.js, Javascript, Material-UI e Axios.
