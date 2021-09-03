@@ -5,6 +5,7 @@ import HeaderBar from "../components/HeaderBar";
 import Search from "../components/Search";
 import CartButton from "../components/CartButton";
 import OrderButton from "../components/OrderButton";
+import AddCartButton from "../components/AddCartButton";
 import HeaderLogo from "../components/HeaderLogo";
 import AccessButton from "../components/AccessButton";
 import {
@@ -13,9 +14,7 @@ import {
   ImageListItem,
   ImageListItemBar,
   Typography,
-  IconButton,
 } from "@material-ui/core";
-import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import { getMenu } from "../api/Api";
 
 export default function Home() {
@@ -76,12 +75,7 @@ export default function Home() {
                       title={props.title}
                       subtitle={<span>R${props.price}</span>}
                       actionIcon={
-                        <IconButton
-                          className={styles.icon}
-                          aria-label="Adicionar pedido ao carrinho."
-                        >
-                          <AddShoppingCartIcon />
-                        </IconButton>
+                        <AddCartButton />
                       }
                     />
                   </ImageListItem>
@@ -93,12 +87,7 @@ export default function Home() {
                       title={data.title}
                       subtitle={<span>R${data.price}</span>}
                       actionIcon={
-                        <IconButton
-                          className={styles.icon}
-                          aria-label="Adicionar pedido ao carrinho."
-                        >
-                          <AddShoppingCartIcon />
-                        </IconButton>
+                        <AddCartButton />
                       }
                     />
                   </ImageListItem>

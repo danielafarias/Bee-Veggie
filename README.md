@@ -70,7 +70,7 @@ Em seguida, adicione as bibliotecas e dependências necessárias:
 <yarn add @material-ui/icons>
 ```
 ```
-<yarn add @material-ui/icons>
+<yarn add @material-ui/lab>
 ```
 
 ## 🍯 Usando Bee Veggie

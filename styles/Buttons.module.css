@@ -5,3 +5,10 @@
 .button {
     margin: theme-spacing(1);
 }
+
+.addCartIcon {
+    background-color: #F8F4F9;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 1rem;
+}
