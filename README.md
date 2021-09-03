@@ -32,9 +32,9 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 * Você adicionou as seguintes bibliotecas  `<Material-UI>`.
 * Você leu o `<passo_a_passo_de_intalação_do_projeto>`.
 
-## 🐝 Instalando Zombie Survival
+## 🐝 Instalando Bee Veggie
 
-Para instalar o Zombie Survival, siga estas etapas:
+Para instalar o Bee Veggie, siga estas etapas:
 
 Caso não possua o Yarn, instale o Node.js em seu site oficial:
 
@@ -73,9 +73,9 @@ Em seguida, adicione as bibliotecas e dependências necessárias:
 <yarn add @material-ui/icons>
 ```
 
-## 🍯 Usando Zombie Survival
+## 🍯 Usando Bee Veggie
 
-Para usar Zombie Survival:
+Para usar Bee Veggie:
 
 ```
 <yarn dev>
@@ -86,9 +86,9 @@ Voilà!
 [http://localhost:3000](http://localhost:3000)
 
 
-## 🌱 Contribuindo para Zombie Survival
+## 🌱 Contribuindo para Bee Veggie
 
-Para contribuir com Zombie Survival, siga estas etapas:
+Para contribuir com Bee Veggie, siga estas etapas:
 
 1. Bifurque este repositório.
 2. Crie um branch: `git checkout -b <zombie_seu_nome>`.
