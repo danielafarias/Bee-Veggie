@@ -1,7 +1,5 @@
-import styles from '../styles/Header.module.css';
+import styles from "../styles/Header.module.css";
 
 export default function HeaderLogo() {
-    return (
-        <img src='images/bee-veggie.svg' className={styles.Logo}/>
-    )
+  return <img src="images/bee-veggie.svg" className={styles.Logo} />;
 }

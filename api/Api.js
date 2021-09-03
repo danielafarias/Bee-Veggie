@@ -8,7 +8,7 @@ export const getMenu = async () => {
     url: baseUrl,
     headers: {
       "Content-Type": "application/json",
-      Authorization: "bee_veggie@gmail.com",
+      Authorization: "bee.veggie@gmail.com",
     },
   });
 
@@ -19,7 +19,8 @@ export const getMenu = async () => {
 export const menuCreate = async (
   imageUrl,
   title,
-  price
+  price,
+  tag
 ) => {
   return await axios({
     method: "post",
@@ -27,12 +28,12 @@ export const menuCreate = async (
     data: {
         imageUrl,
         title,
-        description,
-        price
+        price,
+        tag
     },
     headers: {
       "Content-Type": "application/json",
-      Authorization: "bee_veggie@gmail.com",
+      Authorization: "bee.veggie@gmail.com",
     },
   });
 };

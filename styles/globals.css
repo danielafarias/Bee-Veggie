@@ -51,3 +51,7 @@ div.MuiInput-underline:before {
 div.MuiInput-underline:after {
   border-bottom: 2px solid #5A816F;
 }
+
+div.MuiImageListItemBar-root {
+  background: rgba(0, 0, 0, 0.753);
+}
