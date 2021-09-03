@@ -1,4 +1,8 @@
 .Logo {
-    width: 20rem;
+    width: 15rem;
     margin-bottom: 2rem;
+}
+
+.grow {
+    flex-grow: 1;
 }

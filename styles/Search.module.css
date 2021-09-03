@@ -1,0 +1,19 @@
+.search {
+    position: relative;
+    border-radius: theme-shape-border-radius;
+    background-color: alpha(theme-palette-common-white, 0.15);
+    margin-right: theme-spacing(2);
+    margin-left: 0;
+    width: 100%;
+}
+
+.search:hover {
+    background-color: alpha(theme-palette-common-white, 0.25)
+}
+
+.inputInput {
+    padding: theme-spacing(1, 1, 1, 0);
+    padding-left: calc(1em + theme-spacing(4)px);
+    transition: theme-transitions-create(width);
+    width: 100%;
+}

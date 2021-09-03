@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Roboto', sans-serif;
+  background-color: #F8F4F9;
 }
 
 a {
@@ -13,4 +16,38 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+div.MuiToolbar-root {
+  background-color: #F4EF88;
+}
+
+input.MuiInputBase-input {
+  color: #5A816F;
+}
+
+svg.MuiSvgIcon-root {
+  color: #5A816F;
+}
+
+h4.MuiTypography-root {
+  color: #5A816F;
+  margin: 1rem 0 1rem;
+  font-family: 'Sniglet', cursive;
+}
+
+span.MuiButton-label {
+  color: #5A816F;
+}
+
+div.MuiAppBar-colorPrimary {
+  background-color: #5A816F;
+}
+
+div.MuiInput-underline:before {
+  border-bottom: 1px solid #5A816F;
+}
+
+div.MuiInput-underline:after {
+  border-bottom: 2px solid #5A816F;
 }

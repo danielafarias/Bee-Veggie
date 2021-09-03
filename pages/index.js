@@ -1,7 +1,13 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import Header from '../components/Header'
+import HeaderBar from '../components/HeaderBar'
+import Search from '../components/Search'
+import CartButton from '../components/CartButton'
+import OrderButton from '../components/OrderButton'
+import HeaderLogo from '../components/HeaderLogo'
+import AccessButton from '../components/AccessButton'
+import Menu from '../components/Menu'
+import { Grid } from '@material-ui/core'
 
 export default function Home() {
   return (
@@ -12,14 +18,44 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
+      <Grid container justifyContent='flex-end'>
+        <Grid item>
+          <AccessButton />
+        </Grid>
+      </Grid>
+
+      <Grid container justifyContent='center'>
+        <Grid item>
+          <HeaderLogo />
+        </Grid>
+      </Grid>
+
+      
+          <HeaderBar
+            title={
+              <Search />
+            }
+            icon1={
+              <OrderButton />
+            }
+            icon2={
+              <CartButton />
+            }
+          />
+
+
+
 
       <main className={styles.main}>
-        
+        <Menu/>
       </main>
 
       <footer className={styles.footer}>
-       
+        <Grid container justifyContent='center'>
+          <Grid item>
+          <span>© Daniela Farias</span>
+          </Grid>
+        </Grid>
       </footer>
     </div>
   )

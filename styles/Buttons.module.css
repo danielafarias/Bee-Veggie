@@ -1,0 +1,7 @@
+.accessButton {
+    margin: 1rem;
+}
+
+.button {
+    margin: theme-spacing(1);
+}
