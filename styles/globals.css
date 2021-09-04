@@ -36,6 +36,10 @@ h4.MuiTypography-root {
   font-family: 'Sniglet', cursive;
 }
 
+h6.MuiTypography-root {
+  color: #5A816F;
+}
+
 span.MuiButton-label {
   color: #5A816F;
 }
@@ -54,4 +58,11 @@ div.MuiInput-underline:after {
 
 div.MuiImageListItemBar-root {
   background: rgba(0, 0, 0, 0.753);
+}
+label.MuiFormLabel-root {
+  color: #5A816F;
+}
+
+label.MuiFormLabel-root.Mui-focused {
+  color: #5A816F;
 }
