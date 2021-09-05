@@ -32,15 +32,17 @@ export default function Cart() {
 
   const moneyClickHandler = () => {
     setMoneyClick(true);
-    setPayment('money')
+    setPayment('Dinheiro')
   };
 
   const creditClickHandler = () => {
-    setPayment('credit')
+    setMoneyClick(false);
+    setPayment('Crédito/Débito')
   };
 
   const paypalClickHandler = () => {
-    setPayment('paypal')
+    setMoneyClick(false);
+    setPayment('Paypal')
   };
 
   return (
@@ -185,6 +187,8 @@ export default function Cart() {
 
         <Grid container justifyContent="center" spacing={3}>
           <Grid item className={styles.spanBold}>
+          <Typography variant="p">Forma de Pagamento</Typography>
+          <br />
             <Typography variant="p">Total</Typography>
             <br />
             <Typography variant="p">Dinheiro</Typography>
@@ -192,6 +196,8 @@ export default function Cart() {
             <Typography variant="p">Troco</Typography>
           </Grid>
           <Grid item>
+          <Typography variant="p">{payment}</Typography>
+            <br />
             <Typography variant="p">R$00</Typography>
             <br />
             {money == "" ? (
