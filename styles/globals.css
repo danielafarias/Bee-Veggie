@@ -40,6 +40,10 @@ h6.MuiTypography-root {
   color: #5A816F;
 }
 
+span.MuiTypography-root {
+  color: #5A816F;
+}
+
 span.MuiButton-label {
   color: #5A816F;
 }
@@ -65,4 +69,9 @@ label.MuiFormLabel-root {
 
 label.MuiFormLabel-root.Mui-focused {
   color: #5A816F;
+}
+
+hr.MuiDivider-root {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }

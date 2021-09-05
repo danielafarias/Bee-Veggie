@@ -1,4 +1,4 @@
-.search {
+.textField {
     position: relative;
     border-radius: theme-shape-border-radius;
     background-color: alpha(theme-palette-common-white, 0.15);
@@ -16,4 +16,22 @@
     padding-left: calc(1em + theme-spacing(4)px);
     transition: theme-transitions-create(width);
     width: 100%;
+}
+
+.payment {
+    width: 6rem;
+    color: #5A816F;
+    margin: 1.5rem;
+}
+
+.spanBold {
+    font-weight: bold;
+}
+
+.main {
+    margin-top: 2rem;
+}
+
+.chip {
+    margin: 1rem;
 }
