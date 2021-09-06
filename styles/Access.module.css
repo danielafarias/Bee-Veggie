@@ -1,0 +1,16 @@
+.textField {
+    position: relative;
+    border-radius: theme-shape-border-radius;
+    background-color: alpha(theme-palette-common-white, 0.15);
+    margin-right: theme-spacing(2);
+    margin-left: 0;
+    width: 100%;
+}
+
+.spanBold {
+    font-weight: bold;
+}
+
+.main {
+    margin-top: 2rem;
+}
