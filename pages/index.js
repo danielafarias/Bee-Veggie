@@ -16,8 +16,17 @@ import {
   Typography,
 } from "@material-ui/core";
 import { getMenu } from "../api/Api";
+import io from "socket.io-client";
+import uuid from "uuid/v4";
+
+const myId = uuid();
+const socket = io("http://localhost:5000");
+socket.on("connect", () =>
+  console.log("[IO] Connect => A new connection has been established")
+);
 
 export default function Home() {
+
   const [includeValue, setIncludeValue] = React.useState("");
 
   <Search onChange={(e) => setIncludeValue(e.target.value)} />;
@@ -74,9 +83,7 @@ export default function Home() {
                     <ImageListItemBar
                       title={props.title}
                       subtitle={<span>R${props.price}</span>}
-                      actionIcon={
-                        <AddCartButton />
-                      }
+                      actionIcon={<AddCartButton />}
                     />
                   </ImageListItem>
                 ))
@@ -86,9 +93,7 @@ export default function Home() {
                     <ImageListItemBar
                       title={data.title}
                       subtitle={<span>R${data.price}</span>}
-                      actionIcon={
-                        <AddCartButton />
-                      }
+                      actionIcon={<AddCartButton />}
                     />
                   </ImageListItem>
                 ))}
