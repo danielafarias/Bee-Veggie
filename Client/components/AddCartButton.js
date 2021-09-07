@@ -4,7 +4,7 @@ import { Alert, AlertTitle } from "@material-ui/lab";
 import { IconButton, Popover } from "@material-ui/core";
 import styles from "../styles/Buttons.module.css";
 
-export default function AddCartButton() {
+export default function AddCartButton(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -23,7 +23,7 @@ export default function AddCartButton() {
       <IconButton
         aria-label="Adicionar pedido ao carrinho."
         className={styles.addCartIcon}
-        onClick={handleClick}
+        onClick={handleClick && props.onClick}
       >
         <AddShoppingCartIcon />
       </IconButton>

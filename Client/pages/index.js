@@ -17,7 +17,7 @@ import {
 } from "@material-ui/core";
 import { getMenu } from "../api/Api";
 import io from "socket.io-client";
-import uuid from "uuid/v4";
+import uuid from 'uuidv4'
 
 const myId = uuid();
 const socket = io("http://localhost:5000");
@@ -26,6 +26,30 @@ socket.on("connect", () =>
 );
 
 export default function Home() {
+
+  const [order, setOrder] = React.useState('');
+  const [orders, setOrders] = React.useState([]);
+
+  React.useEffect(() => {
+    const handleNewOrder = newOrder =>
+        setOrders([...orders, newOrder])
+    socket.on('home.order', handleNewOrder)
+    return () => socket.off('home.order', handleNewOrder)
+}, [orders])
+
+const clickHandler = event => {
+    event.preventDefault()
+    if (order.trim()) {
+        socket.emit('home.order', {
+            id: myId,
+            order
+        })
+        setOrder('')
+    }
+}
+
+console.log(order)
+console.log(orders)
 
   const [includeValue, setIncludeValue] = React.useState("");
 
@@ -83,7 +107,7 @@ export default function Home() {
                     <ImageListItemBar
                       title={props.title}
                       subtitle={<span>R${props.price}</span>}
-                      actionIcon={<AddCartButton />}
+                      actionIcon={<AddCartButton onClick={(e) => setOrder('um') && clickHandler}/>}
                     />
                   </ImageListItem>
                 ))
@@ -93,7 +117,7 @@ export default function Home() {
                     <ImageListItemBar
                       title={data.title}
                       subtitle={<span>R${data.price}</span>}
-                      actionIcon={<AddCartButton />}
+                      actionIcon={<AddCartButton onClick={(e) => setOrder('dois') && clickHandler}/>}
                     />
                   </ImageListItem>
                 ))}
