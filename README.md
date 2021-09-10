@@ -7,7 +7,8 @@
 ![GitHub Last Commit](https://img.shields.io/github/last-commit/danielafarias/Bee-Veggie?style=for-the-badge)
 ![Github Watchers](https://img.shields.io/github/watchers/danielafarias/Bee-Veggie?style=for-the-badge)
 
-![Bee-Veggie](https://user-images.githubusercontent.com/79869120/131783554-77f84c2f-38ce-4e56-8719-3873ab52e85b.png)
+![beeveggie](https://user-images.githubusercontent.com/79869120/132793436-71cdbc41-77d9-47c4-81e9-ed8cf9eb3f46.png)
+
 
 
 
