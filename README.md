@@ -18,7 +18,7 @@
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
 - [x] Projeto inicializado
-- [x] Protótipo no [Figma](https://www.figma.com/proto/SxQr92OcaFzEsOvwt5JGNN/Bee-Veggie?node-id=8%3A32&scaling=scale-down&page-id=0%3A1&starting-point-node-id=3%3A3&show-proto-sidebar=1)
+- [x] Protótipo no [Figma](https://www.figma.com/proto/SxQr92OcaFzEsOvwt5JGNN/Bee-Veggie?node-id=52%3A2&scaling=scale-down&page-id=0%3A1&starting-point-node-id=52%3A2&show-proto-sidebar=1)
 - [ ] Views
 - [ ] Componentes e eventos
 - [ ] Criação de requests

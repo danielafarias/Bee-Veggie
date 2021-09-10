@@ -18,9 +18,14 @@
     width: 100%;
 }
 
+.cartPayment {
+    display: flex;
+    justify-content: space-between;
+}
+
 .payment {
     width: 6rem;
-    color: #5A816F;
+    color: #E1B254;
     margin: 1.5rem;
 }
 

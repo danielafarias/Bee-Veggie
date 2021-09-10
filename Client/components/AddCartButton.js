@@ -7,10 +7,6 @@ import styles from "../styles/Buttons.module.css";
 export default function AddCartButton(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -19,11 +15,10 @@ export default function AddCartButton(props) {
   const id = open ? "simple-popover" : undefined;
 
   return (
-    <div>
+    <div className={styles.addCartIcon}>
       <IconButton
         aria-label="Adicionar pedido ao carrinho."
-        className={styles.addCartIcon}
-        onClick={handleClick && props.onClick}
+        onClick={props.onClick}
       >
         <AddShoppingCartIcon />
       </IconButton>

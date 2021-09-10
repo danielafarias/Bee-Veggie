@@ -1,16 +1,8 @@
-.menuTitle {
-    margin: 1rem;
-}
-
-.root {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    overflow: hidden;
-    background-color: theme-palette-background-paper;
+.container {
+  margin-bottom: 1rem;
 }
 
 .footer {
-    margin: 2rem 1rem 1rem;
-    color: #5A816F;
+  margin: 2rem 1rem 1rem;
+  color: #3e3433;
 }

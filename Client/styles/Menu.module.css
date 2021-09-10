@@ -1,0 +1,18 @@
+.menuTitle {
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container {
+  margin-bottom: 1rem;
+}
+
+.root {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  overflow: hidden;
+  background-color: theme-palette-background-paper;
+}

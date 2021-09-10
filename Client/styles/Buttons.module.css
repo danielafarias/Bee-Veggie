@@ -1,5 +1,5 @@
 .accessButton {
-    margin: 1rem;
+    margin: 0;
 }
 
 .button {
@@ -7,8 +7,7 @@
 }
 
 .addCartIcon {
-    background-color: #F8F4F9;
-    width: 2.5rem;
-    height: 2.5rem;
-    margin-right: 1rem;
+    background-color: rgba(248, 244, 249, 0.651);
+    border-radius: 99999px;
+    margin-right: 0.5rem;
 }

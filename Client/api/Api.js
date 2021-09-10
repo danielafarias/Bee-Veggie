@@ -8,7 +8,7 @@ export const getMenu = async () => {
     url: baseUrl,
     headers: {
       "Content-Type": "application/json",
-      Authorization: "bee.veggie@gmail.com",
+      Authorization: "menu@beeveggie.com",
     },
   });
 
@@ -51,7 +51,7 @@ export const menuCreate = async (
     },
     headers: {
       "Content-Type": "application/json",
-      Authorization: "bee.veggie@gmail.com",
+      Authorization: "menu@beeveggie.com",
     },
   });
 };

@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
 html,
@@ -6,7 +5,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  background-color: #F8F4F9;
+  background-color: #EFE4F1;
 }
 
 a {
@@ -19,59 +18,75 @@ a {
 }
 
 div.MuiToolbar-root {
-  background-color: #F4EF88;
+  background-color: #E1B254;
 }
 
 input.MuiInputBase-input {
-  color: #5A816F;
+  color: #3E3433;
 }
 
 svg.MuiSvgIcon-root {
-  color: #5A816F;
+  color: #3E3433;
+}
+
+svg.MuiStepIcon-root.MuiStepIcon-active {
+  color: #3E3433;
+}
+
+svg.MuiStepIcon-root.MuiStepIcon-completed {
+  color: #E1B254;
 }
 
 h4.MuiTypography-root {
-  color: #5A816F;
+  color: #3E3433;
   margin: 1rem 0 1rem;
-  font-family: 'Sniglet', cursive;
 }
 
 h6.MuiTypography-root {
-  color: #5A816F;
+  color: #3E3433;
 }
 
 span.MuiTypography-root {
-  color: #5A816F;
+  color: #3E3433;
 }
 
 span.MuiButton-label {
-  color: #5A816F;
+  color: #3E3433;
 }
 
 div.MuiAppBar-colorPrimary {
-  background-color: #5A816F;
+  background-color: #3E3433;
 }
 
 div.MuiInput-underline:before {
-  border-bottom: 1px solid #5A816F;
+  border-bottom: 1px solid #3E3433;
 }
 
 div.MuiInput-underline:after {
-  border-bottom: 2px solid #5A816F;
+  border-bottom: 2px solid #3E3433;
 }
 
 div.MuiImageListItemBar-root {
-  background: rgba(0, 0, 0, 0.753);
+  background: #3e3433d3;
 }
 label.MuiFormLabel-root {
-  color: #5A816F;
+  color: #3E3433;
 }
 
 label.MuiFormLabel-root.Mui-focused {
-  color: #5A816F;
+  color: #3E3433;
 }
 
 hr.MuiDivider-root {
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+div.MuiPaper-root {
+  background-color: #EFE4F1;
+}
+
+span.MuiBadge-colorPrimary {
+  background-color: #E1B254;
+  color: #3E3433;
 }

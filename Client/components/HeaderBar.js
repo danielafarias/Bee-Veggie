@@ -8,21 +8,16 @@ import {
 } from "@material-ui/core";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import styles from "../styles/Header.module.css";
+import { AccessButton } from "./AccessButton";
 
 export default function HeaderBar(props) {
   return (
     <div className={styles.grow}>
-      <AppBar position="static">
+      <AppBar position="fixed">
         <Toolbar>
-          <Grid container justifyContent="space-between" alignItems="center">
+          <Grid container justifyContent="flex-end" alignItems="center">
+         
             <Grid item>
-              <Typography variant="h6" noWrap>
-                {props.title}
-              </Typography>
-            </Grid>
-            <Grid item>
-              {props.icon1}
-              {props.icon2}
               <IconButton
                 href="https://github.com/danielafarias/Bee-Veggie"
                 rel="noreferrer"
@@ -31,6 +26,7 @@ export default function HeaderBar(props) {
                 <GitHubIcon />
               </IconButton>
             </Grid>
+              <AccessButton />
           </Grid>
         </Toolbar>
       </AppBar>

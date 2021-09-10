@@ -1,8 +1,8 @@
-import HeaderBar from "../components/HeaderBar";
-import HeaderLogo from "../components/HeaderLogo";
-import AccessButton from "../components/AccessButton";
-import CartButton from "../components/CartButton";
-import OrderButton from "../components/OrderButton";
+import HeaderBar from "./HeaderBar";
+import HeaderLogo from "./HeaderLogo";
+import AccessButton from "./AccessButton";
+import CartButton from "./CartButton";
+import OrderButton from "./OrderButton";
 import { 
     Grid,
     Typography

@@ -2,69 +2,89 @@ import React from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import HeaderBar from "../components/HeaderBar";
-import Search from "../components/Search";
-import CartButton from "../components/CartButton";
-import OrderButton from "../components/OrderButton";
-import AddCartButton from "../components/AddCartButton";
 import HeaderLogo from "../components/HeaderLogo";
-import AccessButton from "../components/AccessButton";
+import Menu from "../components/Menu";
+import Cart from "../components/Cart";
 import {
   Grid,
-  ImageList,
-  ImageListItem,
-  ImageListItemBar,
   Typography,
+  Stepper,
+  Step,
+  StepLabel,
+  StepContent,
+  Button,
+  Paper,
+  Divider,
+  Fade,
 } from "@material-ui/core";
-import { getMenu } from "../api/Api";
 import io from "socket.io-client";
-import uuid from 'uuidv4'
+import { v4 as uuidv4 } from "uuid";
 
-const myId = uuid();
-const socket = io("http://localhost:5000");
+const myId = uuidv4;
+const cart = Cart.cart;
+
+const socket = io("http://localhost:8080", {
+  transports: ["websocket", "polling", "flashsocket"],
+});
 socket.on("connect", () =>
   console.log("[IO] Connect => A new connection has been established")
 );
 
 export default function Home() {
+  const putOnCart = () => {
+    socket.on("menu.order", cart);
+    socket.emit("menu.order", {
+      id: myId,
+      cart,
+    });
+    return () => socket.off("menu.order", cart);
+  };
 
-  const [order, setOrder] = React.useState('');
-  const [orders, setOrders] = React.useState([]);
+  const getSteps = () => {
+    return ["Cardápio", "Pagamento", "Acompanhe o pedido"];
+  };
 
-  React.useEffect(() => {
-    const handleNewOrder = newOrder =>
-        setOrders([...orders, newOrder])
-    socket.on('home.order', handleNewOrder)
-    return () => socket.off('home.order', handleNewOrder)
-}, [orders])
+  const checked = React.useState(true);
 
-const clickHandler = event => {
-    event.preventDefault()
-    if (order.trim()) {
-        socket.emit('home.order', {
-            id: myId,
-            order
-        })
-        setOrder('')
+  const getStepContent = (step) => {
+    switch (step) {
+      case 0:
+        return (
+          <Fade in={checked} timeout={4000}>
+            <Menu />
+          </Fade>
+        );
+      case 1:
+        return (
+          <Fade in={checked} timeout={4000}>
+            <Cart />
+          </Fade>
+        );
+      case 2:
+        return "ORDER";
+      default:
+        return "Unknown step";
     }
-}
+  };
 
-console.log(order)
-console.log(orders)
+  const [activeStep, setActiveStep] = React.useState(0);
+  const steps = getSteps();
 
-  const [includeValue, setIncludeValue] = React.useState("");
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  };
 
-  <Search onChange={(e) => setIncludeValue(e.target.value)} />;
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
 
-  const [menu, setMenu] = React.useState("");
+  const handleReset = () => {
+    setActiveStep(0);
+  };
 
-  if (!menu) {
-    getMenu().then((res) => setMenu(res));
-  }
-  const data = Array.from(menu);
-
-  const searched = data.filter(
-    (v) => v.title.includes(includeValue) || v.tag.includes(includeValue)
-  );
+  const submitHandler = async (event) => {
+    event.preventDefault();
+  };
 
   return (
     <div className={styles.container}>
@@ -74,11 +94,11 @@ console.log(orders)
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Grid container justifyContent="flex-end">
-        <Grid item>
-          <AccessButton />
-        </Grid>
-      </Grid>
+      <br />
+      <Divider />
+      <br />
+
+      <HeaderBar />
 
       <Grid container justifyContent="center">
         <Grid item>
@@ -86,43 +106,51 @@ console.log(orders)
         </Grid>
       </Grid>
 
-      <HeaderBar
-        title={<Search onChange={(e) => setIncludeValue(e.target.value)} />}
-        icon1={<OrderButton />}
-        icon2={<CartButton />}
-      />
+      <Divider />
 
-      <main className={styles.main}>
-        <div className={styles.root}>
-          <ImageList rowHeight={200}>
-            <ImageListItem key="Subheader" cols={2} style={{ height: "auto" }}>
-              <div className={styles.menuTitle}>
-                <Typography variant="h4">Menu</Typography>
-              </div>
-            </ImageListItem>
-            {includeValue == null
-              ? data.map((data) => (
-                  <ImageListItem key={props.id}>
-                    <img src={props.imageUrl} alt={props.title} />
-                    <ImageListItemBar
-                      title={props.title}
-                      subtitle={<span>R${props.price}</span>}
-                      actionIcon={<AddCartButton onClick={(e) => setOrder('um') && clickHandler}/>}
-                    />
-                  </ImageListItem>
-                ))
-              : searched.map((data) => (
-                  <ImageListItem key={data._id}>
-                    <img src={data.imageUrl} alt={data.title} />
-                    <ImageListItemBar
-                      title={data.title}
-                      subtitle={<span>R${data.price}</span>}
-                      actionIcon={<AddCartButton onClick={(e) => setOrder('dois') && clickHandler}/>}
-                    />
-                  </ImageListItem>
-                ))}
-          </ImageList>
-        </div>
+      <main>
+        <form onSubmit={submitHandler}>
+          <div>
+            <Stepper activeStep={activeStep} orientation="vertical">
+              {steps.map((label, index) => (
+                <Step key={label}>
+                  <StepLabel>{label}</StepLabel>
+                  <StepContent>
+                    <Typography>{getStepContent(index)}</Typography>
+                    <div>
+                      <div>
+                        <Button
+                          disabled={activeStep === 0}
+                          onClick={handleBack}
+                        >
+                          Voltar
+                        </Button>
+                        <Button
+                          variant="outlined"
+                          onClick={handleNext}
+                          type={
+                            activeStep === steps.length - 1 ? "submit" : null
+                          }
+                        >
+                          {activeStep === steps.length - 1
+                            ? "Entregue"
+                            : "Próximo"}
+                        </Button>
+                      </div>
+                    </div>
+                  </StepContent>
+                </Step>
+              ))}
+            </Stepper>
+
+            {activeStep === steps.length && (
+              <Paper square elevation={0}>
+                <Typography>Bom apetite e volte sempre!</Typography>
+                <Button onClick={handleReset}>Pedir novamente</Button>
+              </Paper>
+            )}
+          </div>
+        </form>
       </main>
 
       <footer className={styles.footer}>
