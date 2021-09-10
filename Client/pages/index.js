@@ -32,12 +32,12 @@ socket.on("connect", () =>
 
 export default function Home() {
   const putOnCart = () => {
-    socket.on("menu.order", cart);
-    socket.emit("menu.order", {
+    socket.on("menu.cart", cart);
+    socket.emit("menu.cart", {
       id: myId,
       cart,
     });
-    return () => socket.off("menu.order", cart);
+    return () => socket.off("menu.cart", cart);
   };
 
   const getSteps = () => {

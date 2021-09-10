@@ -1,37 +1,48 @@
 import React from "react";
-import HeaderBar from "./HeaderBar";
-import HeaderLogo from "./HeaderLogo";
-import AccessButton from "./AccessButton";
-import CartButton from "./CartButton";
-import OrderButton from "./OrderButton";
 import MoneyButton from "./MoneyButton";
 import CreditButton from "./CreditButton";
 import DeleteButton from "./DeleteButton";
-import ConfirmOrderButton from "./ConfirmOrderButton";
 import { useRouter } from "next/router";
-import {
-  Grid,
-  Typography,
-  TextField,
-  Chip,
-  Divider,
-  IconButton,
-} from "@material-ui/core";
+import { Grid, Typography, TextField, Chip, Divider } from "@material-ui/core";
 import styles from "../styles/Cart.module.css";
 import FaceIcon from "@material-ui/icons/Face";
 import RestaurantIcon from "@material-ui/icons/Restaurant";
 import FastfoodIcon from "@material-ui/icons/Fastfood";
-import Head from "next/head";
 import { orderPost } from "../api/Api";
+import Menu from './Menu';
+import io from "socket.io-client";
+import { v4 as uuidv4 } from "uuid";
+
+const myId = uuidv4;
+const cart = Cart.cart;
+
+const socket = io("http://localhost:8080", {
+  transports: ["websocket", "polling", "flashsocket"],
+});
+socket.on("connect", () =>
+  console.log("[IO] Connect => A new connection has been established")
+);
 
 export default function Cart() {
+  
+    socket.on("menu.cart", cart);
+    socket.emit("menu.cart", {
+      id: myId,
+      cart,
+    });
+    socket.off("menu.cart", cart);
+  
+
   const [name, setName] = React.useState("");
   const [table, setTable] = React.useState("");
   const [moneyClick, setMoneyClick] = React.useState(false);
   const [money, setMoney] = React.useState("");
   const [payment, setPayment] = React.useState("");
 
+  
   const router = useRouter();
+  const responseData = Array.from(socket);
+  console.log(responseData)
 
   const submitHandler = async (event) => {
     event.preventDefault();
@@ -63,11 +74,6 @@ export default function Cart() {
   const creditClickHandler = () => {
     setMoneyClick(false);
     setPayment("Crédito/Débito");
-  };
-
-  const paypalClickHandler = () => {
-    setMoneyClick(false);
-    setPayment("Paypal");
   };
 
   return (
@@ -125,15 +131,17 @@ export default function Cart() {
             <Grid item>
               <Typography variant="h6">Confirme seu pedido</Typography>
             </Grid>
+            {responseData.map(data => (
             <Grid item>
               <FastfoodIcon />
               <Typography variant="p" className={styles.spanBold}>
                 {" "}
-                Exemplo title{" "}
+                {data.title}{" "}
               </Typography>
-              <Typography variant="p"> R$00 </Typography>
+              <Typography variant="p"> R${data.price} </Typography>
               <DeleteButton />
             </Grid>
+            ))}
           </Grid>
 
           <Divider />
@@ -143,7 +151,7 @@ export default function Cart() {
               <Typography variant="h6">Forma de Pagamento</Typography>
             </Grid>
             <Grid item>
-                <Typography variant="p">Selecione dinheiro ou cartão</Typography>
+              <Typography variant="p">Selecione dinheiro ou cartão</Typography>
             </Grid>
             <Grid item>
               <div className={styles.cartPayment}>

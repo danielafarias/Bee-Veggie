@@ -12,7 +12,7 @@
 .root {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: flex-start;
   overflow: hidden;
   background-color: theme-palette-background-paper;
 }
