@@ -12,7 +12,7 @@
 
 
 
-> Bee Veggie é uma plataforma criada para ajudar na experiência do cliente em um restaurante em meio à pandemia. Desenvolvido com Next.js, Javascript, Material-UI e Axios.
+> Bee Veggie é uma plataforma criada para ajudar na experiência do cliente em um restaurante em meio à pandemia. Desenvolvido com Next.js, Javascript, Material-UI e Axios para o lado Client; E para o lado Sever, Node.js, Koa, Nodemon e Socket.io.
 
 ### 💛 Ajustes e melhorias
 
