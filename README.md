@@ -36,8 +36,8 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
-* Você instalou a versão mais recente de `<Javascript / Node.js / Yarn / Next.js>`
-* Você adicionou as seguintes bibliotecas  `<Material-UI>`.
+* Você instalou a versão mais recente de `<Javascript / Node.js / Yarn / Next.js>`.
+* Você adicionou as seguintes bibliotecas  `<Material-UI / Koa / Cors do Koa / Nodemon / Socket.io>`.
 * Você leu o `<passo_a_passo_de_intalação_do_projeto>`.
 
 ## 🐝 Instalando Bee Veggie
