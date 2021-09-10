@@ -19,17 +19,24 @@
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
 - [x] Projeto inicializado
+- [x] Logotipo no [Canva](https://www.canva.com/design/DAEphNAqvSM/C3agyJNW6p3BCgrB0pWw6w/view?utm_content=DAEphNAqvSM&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
+- [x] Paleta de cores:
+- ![#E1B254](https://via.placeholder.com/15/E1B254/000000?text=+) `Yellow Orange #E1B254`
+- ![#3E3433](https://via.placeholder.com/15/3E3433/000000?text=+) `Black Coffee #3E3433`
+- ![#EFE4F1](https://via.placeholder.com/15/EFE4F1/000000?text=+) `Pale Purple #EFE4F1`
 - [x] Protótipo no [Figma](https://www.figma.com/proto/SxQr92OcaFzEsOvwt5JGNN/Bee-Veggie?node-id=52%3A2&scaling=scale-down&page-id=0%3A1&starting-point-node-id=52%3A2&show-proto-sidebar=1)
+- [x] Server
+- [x] Client
+- [x] Criação de requests da API
 - [ ] Views
 - [ ] Componentes e eventos
-- [ ] Criação de requests
 - [ ] Projeto Finalizado
 
 ## 🌻 Pré-requisitos
 
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
-* Você instalou a versão mais recente de `<Javascript / Yarn / Next.js>`
+* Você instalou a versão mais recente de `<Javascript / Node.js / Yarn / Next.js>`
 * Você adicionou as seguintes bibliotecas  `<Material-UI>`.
 * Você leu o `<passo_a_passo_de_intalação_do_projeto>`.
 
@@ -52,9 +59,12 @@ Clone o projeto:
 <git clone https://github.com/danielafarias/Bee-Veggie.git>
 ```
 
-Em seguida, adicione as bibliotecas e dependências necessárias:
+Em seguida, adicione as bibliotecas e dependências necessárias no Client Side:
 ```
 <cd Bee-Veggie>
+```
+```
+<cd Client>
 ```
 ```
 <yarn install>
@@ -62,11 +72,15 @@ Em seguida, adicione as bibliotecas e dependências necessárias:
 ```
 <yarn add next react react-dom>
 ```
-
+```
+<yarn add socket.io-client>
+```
+```
+<yarn add uuid>
+```
 ```
 <yarn add @material-ui/core>
 ```
-
 ```
 <yarn add @material-ui/icons>
 ```
@@ -74,13 +88,39 @@ Em seguida, adicione as bibliotecas e dependências necessárias:
 <yarn add @material-ui/lab>
 ```
 
+E também, adicione as bibliotecas e dependências necessárias no Server Side:
+```
+<cd ..>
+```
+```
+<cd Server>
+```
+```
+<npm i socket.io>
+```
+```
+<npm i koa>
+```
+```
+<npm i -D nodemon>
+```
+```
+<npm i @koa/cors>
+```
+
 ## 🍯 Usando Bee Veggie
 
 Para usar Bee Veggie:
 
+Começe inicializando o /Server:
+```
+<nodemon server>
+```
+Em seguida inicialize o /Client:
 ```
 <yarn dev>
 ```
+
 
 Voilà!
 
@@ -92,7 +132,7 @@ Voilà!
 Para contribuir com Bee Veggie, siga estas etapas:
 
 1. Bifurque este repositório.
-2. Crie um branch: `git checkout -b <zombie_seu_nome>`.
+2. Crie um branch: `git checkout -b <bee_seu_nome>`.
 3. Faça suas alterações e confirme-as: `git commit -m '<sua_mensagem_de_commit>'`
 4. Envie para o branch original: `git push origin <master> / <https://github.com/danielafarias/Bee-Veggie>`
 5. Crie a solicitação de pull.
